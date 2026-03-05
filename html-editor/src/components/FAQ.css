@@ -1,0 +1,105 @@
+.faq-container {
+    min-height: 100vh;
+    padding: 120px 40px 60px;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
+    color: white;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 60px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff416c 0%, #4facfe 50%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 20px auto;
+    background: rgba(0, 242, 254, 0.08);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    transition: all var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0, 242, 254, 0.4);
+}
+
+.faq-question {
+    padding: 24px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition);
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(79, 172, 254, 0.05) 100%);
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.faq-question:hover {
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.1) 100%);
+    color: #00f2fe;
+}
+
+.faq-answer {
+    padding: 20px 24px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    animation: slideDown 0.3s ease-in-out;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+    border-top: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 100px 20px 60px 20px;
+    }
+}

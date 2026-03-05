@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Microphone Checker",
+  "short_name": "Mic Checker",
+  "version": "1.0",
+  "description": "Professional microphone testing and diagnostics tool",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "/icon/icon48.png",
+    "default_title": "Microphone Checker"
+  },
+  "icons": {
+    "16": "/icon/icon16.png",
+    "48": "/icon/icon48.png",
+    "128": "/icon/icon128.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

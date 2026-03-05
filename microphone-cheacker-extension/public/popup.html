@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microphone Checker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h2>🎤 Microphone Tester</h2>
+
+      <!-- Device Selector -->
+      <div class="device-selector">
+        <label>🎧 Select Microphone:</label>
+        <select id="deviceSelect">
+          <option value="">Loading devices...</option>
+        </select>
+      </div>
+
+      <!-- Control Buttons -->
+      <div class="button-group">
+        <button id="startBtn" class="btn btn-primary">Start Mic</button>
+        <button id="recordBtn" class="btn btn-secondary" disabled>Start Recording</button>
+        <button id="stopRecordBtn" class="btn btn-secondary" disabled>Stop Recording</button>
+        <button id="stopBtn" class="btn btn-danger" disabled>Stop Mic</button>
+      </div>
+
+      <!-- Status Display -->
+      <p id="status" class="status-text">Click Start Mic</p>
+
+      <!-- Meters -->
+      <div class="meter-container">
+        <div>
+          <label class="meter-header">🔊 Sound Level</label>
+          <div class="meter">
+            <div id="soundMeter" class="meter-fill" style="width: 0%"></div>
+          </div>
+          <div class="meter-label">
+            <span>Volume</span>
+            <span id="soundValue" class="meter-value">0%</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 25px">
+          <label class="meter-header">🔇 Noise Level</label>
+          <div class="meter noise-meter">
+            <div id="noiseMeter" class="meter-fill noise-fill" style="width: 0%"></div>
+          </div>
+          <div class="meter-label">
+            <span id="noiseStatus" class="noise-status">Quiet 🟢</span>
+            <span id="noiseValue" class="meter-value">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Troubleshooting Panel -->
+      <div id="troublePanel" class="troubleshooting-panel" style="display: none">
+        <div class="troubleshooting-header" onclick="toggleTroubleshooting()">
+          <h3>🔧 Troubleshooting Panel</h3>
+          <span id="toggleIcon">▼</span>
+        </div>
+
+        <div id="troubleContent" class="troubleshooting-content">
+          <!-- Connection Status -->
+          <div class="diagnostic-item">
+            <span class="diagnostic-label">📌 Connection Status:</span>
+            <span id="connectionStatus" class="diagnostic-value warning">⚠️ Not Connected</span>
+          </div>
+
+          <!-- Permissions -->
+          <div class="diagnostic-item">
+            <span class="diagnostic-label">🔐 Permissions:</span>
+            <span id="permissionStatus" class="diagnostic-value neutral">⚪ Not Requested</span>
+          </div>
+
+          <!-- Devices Found -->
+          <div class="diagnostic-item">
+            <span class="diagnostic-label">📱 Devices Found:</span>
+            <span id="devicesStatus" class="diagnostic-value"></span>
+          </div>
+
+          <!-- Issues Section -->
+          <div id="issuesSection" class="issues-section" style="display: none">
+            <h4>⚠️ Detected Issues:</h4>
+            <ul id="issuesList" class="issues-list"></ul>
+          </div>
+
+          <!-- Success Message -->
+          <div id="successMsg" class="success-message" style="display: none">
+            ✅ All systems operational! Your microphone is working properly.
+          </div>
+        </div>
+      </div>
+
+      <!-- Recording Player -->
+      <div id="player" class="player" style="display: none">
+        <audio id="audioPlayer" controls style="width: 100%; margin-bottom: 16px"></audio>
+        <a id="downloadBtn" href="#" download="recording.webm" class="download-btn">
+          📥 Download Recording
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

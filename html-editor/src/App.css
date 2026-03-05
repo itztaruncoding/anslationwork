@@ -1,0 +1,100 @@
+/* ================= HEADER ================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+/* Logo / Title */
+.header h1 {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(22px, 4vw, 32px);
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    font-size: 15px;
+    align-items: center;
+}
+
+/* Links */
+.navbar a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: var(--transition);
+    white-space: nowrap;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.navbar a:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Hover underline animation */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: -8px;
+    background: var(--accent-color);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    padding: 50px 30px 30px;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    text-align: center;
+    color: var(--light-text);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.footer p {
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+/* ================= SECTION SPACING ================= */
+
+section {
+    scroll-margin-top: 100px;
+}
